@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>NUMBER GUESSING PROGRAM</h1>
+    <input type="number"placeholder="enter the value1" id="num">
+    <button onclick="playgame()">guess</button>
+    <p id="feedback"></p>
+    <p id="attempts"></p>
+    <script>
+        let target=Math.floor(Math.random()*10)+1;
+        console.log(target);
+        let count=0;
+
+        function playgame(){
+            let guessvalue=parseInt(document.getElementById("num").value);
+            count++;
+            if(guessvalue < target){
+                document.getElementById("feedback").innerText="too low";
+            }
+            else if(guessvalue > target){
+                document.getElementById("feedback").innerText="too high";
+            }
+            else{
+                document.getElementById("feedback").innerText="your guess is correct";
+                document.getElementById("attempts").innerText="your no of attempts"+count;
+            
+            }
+
+        }
+    </script>
+</body>
+</html>
